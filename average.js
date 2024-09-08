@@ -66,18 +66,20 @@ const evaluations = [
     ];
 
 function getStudentsAverage(arr = []) {
-    let array = []
-    let score = 0
-    for (let item of arr) {
-        for (let value of arr) {
-            if (item.studentName == value.studentName) {
-               score += item.score
-               
-            }
-            if (score < 40) array.push(item)
-        }
-    }
-    return array
+    const studentScores = evaluations.reduce((acc, {studentId, studentName, score}) => {
+      if (!acc[studentId]) {
+        acc[studentId] = {studentName, scores: []}
+      }
+      acc[studentId].scores.push(score)
+      return acc
+    }, {})
+
+    const average = Object.values(studentScores).map((student) => {
+        const average = student.scores.reduce((accumulator, currentValue) => accumulator + currentValue, 0) / student.scores.length
+        return { studentName: student.studentName, average }
+    })
+    const result = average.filter(({average}) => average < 40) 
+    return result
 }
 
 const res = getStudentsAverage(evaluations)
