@@ -27,7 +27,6 @@ const payments = [
     studentId: 2,
     studentName: "Lu Kang",
     payedAmount: 1500,
-    
     year: 2020
     },
     {
@@ -50,10 +49,10 @@ const payments = [
     }
     ];
 
-function sumOfPayments (arr = []) {
-    return arr.reduce((sum, payment) => sum + payment.payedAmount, 0)
-}    
+function countOfPaymentsMoreThan60 (arr = []) {
+    return payments.filter((payment) => payment.payedAmount > 1500).length
+}
 
-const res = sumOfPayments(payments)
+const res = countOfPaymentsMoreThan60(payments)
 
 console.log(res)

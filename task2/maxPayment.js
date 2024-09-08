@@ -27,25 +27,24 @@ const payments = [
     studentId: 2,
     studentName: "Lu Kang",
     payedAmount: 1500,
-    
     year: 2020
     },
     {
-    studentId: 2, // Unique for each student
+    studentId: 2,
     studentName: "Lu Kang",
     payedAmount: 1400,
     year: 2021
     },
     {
-    studentId: 2, // Unique for each student
+    studentId: 2,
     studentName: "Lu Kang",
     payedAmount: 1300,
     year: 2023
     },
     {
-    studentId: 2, // Unique for each student
+    studentId: 2,
     studentName: "Lu Kang",
-    payedAmount: 1600,
+    payedAmount: 1200,
     year: 2023
     }
     ];
