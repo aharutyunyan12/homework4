@@ -62,6 +62,7 @@ function calculateTheSum(arr = []) {
     }, {}))
 } 
 
+
 const res = calculateTheSum(payments)
 
 console.log(res)
