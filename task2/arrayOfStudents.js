@@ -49,10 +49,19 @@ const payments = [
     }
     ];
 
-function sumOfPayments (arr = []) {
-    return arr.reduce((sum, payment) => sum + payment.payedAmount, 0)
-}    
+function calculateTheSum(arr = []) {
+    return Object.values(payments.reduce ((acc, { studentId, studentName, payedAmount }) => {
+        if (!acc[studentId]) {
+            acc[studentId] = {
+                studentName,
+                payedAmount: 0
+            }
+        }
+        acc[studentId].payedAmount += payedAmount
+        return acc
+    }, {}))
+} 
 
-const res = sumOfPayments(payments)
+const res = calculateTheSum(payments)
 
 console.log(res)
